@@ -10,11 +10,8 @@ import styles from './app.module.scss';
 export const App = () => {
 	const [articleState, setArticleState] = useState(defaultArticleState);
 
-	const [formState, setFormState] = useState(defaultArticleState);
-
 	const handleResetData = () => {
 		setArticleState(defaultArticleState);
-		setFormState(defaultArticleState);
 	};
 
 	return (
@@ -30,9 +27,7 @@ export const App = () => {
 				} as CSSProperties
 			}>
 			<ArticleParamsForm
-				formState={formState}
-				setFormState={setFormState}
-				onSetArticleState={() => setArticleState(formState)}
+				onSetArticleState={setArticleState}
 				onResetData={handleResetData}
 			/>
 			<Article />
